@@ -1,13 +1,13 @@
 # NWED51
 
-## NWED51 - Project
+## NWED51 - Web Development
 
 [![Code License](https://img.shields.io/badge/Code%20License-GPLv2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Follow%20%40iammelvink-blue.svg?style=social&logo=linkedin)](https://www.linkedin.com/in/iammelvink)
 
 ## Overview
 
-This is the codebase produced for the **NWED51** course
+This is the codebase produced for the **NWED51 Web Development** course
 
 Written in **Placeholder**
 
