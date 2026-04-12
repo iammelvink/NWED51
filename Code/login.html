@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeshewe Community Hub - Login</title>
+  <link rel="stylesheet" href="styles.css">
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+
+
+     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+
+     <style>
+      #map { height: 350px; }
+     </style>
+ 
+
+</head>
+
+
+<body>
+
+  <nav class="top-nav">
+    <div class="brand">Galeshewe Community Hub</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact page.html">Contact Us</a>
+      <div id="navMenu" class="hidden">
+        <a href="#" onclick="logout()">Sign Out</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- AUTH SECTION -->
+    <section id="authPage" class="card">
+      <h2 id="authTitle">Community Login</h2>
+
+      <input type="email" id="email" placeholder="Email">
+      <input type="password" id="password" placeholder="Password">
+
+      <button onclick="handleAuth()">Login</button>
+
+      <p onclick="toggleAuth()" id="toggleText" class="toggle-text">
+        Don't have an account? Sign Up
+      </p>
+    </section>
+
+    <!-- HOME / REPORT SECTION -->
+    <section id="homePage" class="hidden">
+      <div class="welcome" id="welcomeMessage"></div>
+
+      <div class="card">
+        <h2>Report a Local Problem</h2>
+        <textarea id="desc" placeholder="Describe the problem..."></textarea>
+
+        <label for="fileInput"><strong>Attach Photo:</strong></label>
+        <input type="file" id="fileInput" accept="image/*">
+
+        <button onclick="submitReport()">Submit Report</button>
+      </div>
+
+    
+      <h3>User Location</h3>
+       <div id="map"></div>
+
+
+      <div class="card">
+        <h3>Recent Reports</h3>
+        <ul id="feed"></ul>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="javascrip.js"></script>
+ 
+</body>
+<script>
+
+var map = L.map('map');
+map.setView([51.505, -0.09], 13);
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+
+
+navigator.geolocation.watchPosition(success, error);
+
+let marker, circle, zoomed;
+
+function success(position) {
+
+  const lat= position.coords.latitude;
+  const lng= position.coords.longitude;
+  const accuracy= position.coords.accuracy;
+
+  if(marker) {
+    map.removeLayer(marker);
+    map.removeLayer(circle);
+  }
+
+  marker= L.marker([lat, lng]).addTo(map);
+  circle= L.circle([lat, lng], { radius: accuracy }).addTo(map);
+
+
+  if (!zoomed) {
+    zoomed= map.fitBounds(circle.getBounds());
+
+  }
+
+
+  
+
+}
+
+
+function error(err) {
+
+  if (err.code === 1) {
+    alert("Please allow geolocation access");
+  } else {
+    alert("Cannot get current location")
+  }
+}
+
+  
+
+
+
+</script>
+
+</html>
