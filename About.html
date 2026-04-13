@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<head>
+    <title>ProActive Sports</title>
+    <link rel="icon" type="image/x-icon" href="https://scontent-jnb2-1.xx.fbcdn.net/v/t39.30808-6/670381927_122101232756789078_6996963013773023967_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=x7jNfpNmm6gQ7kNvwFAViUn&_nc_oc=AdpOQ_lZ1QVgUDQtmjUCQPUk5zfmdXf2dd14sDoZXo2cx9L1eg4y7i8OZaD7mmWn5_s&_nc_zt=23&_nc_ht=scontent-jnb2-1.xx&_nc_gid=um4IES3dgopGRhGIHAfDJA&_nc_ss=7a389&oh=00_Af2naLydZjjhM4OcjpaCargSx-DxPrnAwUCfZ39m2tp5tA&oe=69E072EB">
+
+    <nav>
+
+        <div class="logo">
+            <img
+                src="https://scontent-jnb2-1.xx.fbcdn.net/v/t39.30808-6/670381927_122101232756789078_6996963013773023967_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=x7jNfpNmm6gQ7kNvwFAViUn&_nc_oc=AdpOQ_lZ1QVgUDQtmjUCQPUk5zfmdXf2dd14sDoZXo2cx9L1eg4y7i8OZaD7mmWn5_s&_nc_zt=23&_nc_ht=scontent-jnb2-1.xx&_nc_gid=um4IES3dgopGRhGIHAfDJA&_nc_ss=7a389&oh=00_Af2naLydZjjhM4OcjpaCargSx-DxPrnAwUCfZ39m2tp5tA&oe=69E072EB" />
+        </div>
+        <div class="menu">
+
+            <a href="Home.html">Home</a></li>
+            <a href="Objectives Page.html">Objectives</a></li>
+            <a href="About.html">About</a></li>
+        </div>
+         <button id="signin-btn" onclick="showLoginModal()">Sign In</button>
+    </nav>
+    <header>
+        <h1>ProActive Sports</h1>
+        <p>Empowering Athletes, Elevating Sports</p>
+
+
+    </header>
+</head>
+<style>
+   nav img {
+        height: 60px;
+    }
+
+    body {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        background: whitesmoke;
+        color: black;
+    }
+
+    header {
+        text-align: center;
+        color: white;
+        padding: 20px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        background-image: url('https://i.pinimg.com/1200x/ea/0b/c7/ea0bc7e612df365f5b9c4b7a319c6145.jpg');
+    }
+
+    nav {
+        background: black;
+        color: white;
+        padding: 10px;
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+    .nav-left {
+        display: flex;
+        align-items: center;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 18px;
+    }
+
+    nav a:hover {
+        color: black;
+        background: white;
+        padding: 5px;
+        border-radius: 5px;
+
+
+    }
+     #signin-btn {
+        background: white;
+        color: black;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    #signin-btn:hover {
+        background: #f0f0f0;
+    }
+
+
+    .card {
+        background: white;
+        padding: 25px;
+        margin: 20px auto;
+        width: 80%;
+        border-radius: 10px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    footer {
+        background: black;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .card:hover {
+        transform: translateY(-8px) scale(1.03);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+    .contact-us a {
+        color: black;
+        text-decoration: none;
+    }
+     input {
+        display: block;
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 50px;
+    }
+
+    button {
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 50px;
+    }
+     .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.4);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 400px;
+        border-radius: 10px;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+    }
+</style>
+
+<body>
+
+    <section class="information">
+        <div class="card">
+            <h2>About ProActive Sports</h2>
+            <p>ProActive Sports is a sports management company that provides a range of services to athletes, teams and
+                organizations.</br> We specialize in athlete representation, event management and sports
+                marketing.</br> Our team of experienced professionals is dedicated to helping our clients achieve their
+                goals and maximize their potential in the world of sports.</p>
+        </div>
+    </section>
+    <section class="negotiation">
+        <div class="card">
+            <h2>Our Services</h2>
+            <p>Our services include contract negotiation, endorsement deals and career development for athletes.<br> We
+                also help with event planning and management, including organizing tournaments, exhibitions and
+                promotional events.<br> Additionally, we offer sports marketing services to help our clients build their
+                brand and connect with fans.</p>
+        </div>
+    </section>
+    <section class="help">
+        <div class="card">
+            <h2>How We Help</h2>
+            <p>At ProActive Sports, we are committed to providing personalized and comprehensive support to our
+                clients.<br> We work closely with athletes, teams, and organizations to understand their unique needs
+                and goals and we develop customized strategies to help them succeed.<br> Whether you are an aspiring
+                athlete looking for representation or a team seeking event management services, ProActive Sports is here
+                to help you achieve your dreams in the world of sports.</p>
+        </div>
+    </section>
+    <section class="mental-health&wellnes">
+        <div class="card">
+            <h2>Mental Health & Wellness</h2>
+            <p>At ProActive Sports, we understand the importance of mental health and wellness in the world of sports. Our team of experts provides support and resources to help athletes maintain a healthy work-life balance, manage stress and achieve their full potential.</p>
+            <p>We offer mental health counseling, wellness programs and resources to help athletes navigate the challenges of their careers and maintain their overall well-being. Our goal is to empower athletes to perform at their best while prioritizing their mental health and wellness.</p>
+            <p>Whether you're an athlete looking for support or a team seeking resources for your players, ProActive Sports is here to help you prioritize mental health and wellness in the world of sports.</p>
+            
+        </div>
+    </section>
+    <section>
+
+        <p>Contact us today to learn more about our services and how we can help you achieve your goals in the world of
+            sports. We look forward to working with you!</p>
+        <div class="contact-us">
+            <div>
+                <p><img width="50" height="50" src="https://img.icons8.com/ios/50/whatsapp--v1.png"
+                        alt="whatsapp--v1" />+27 68 505 3419</p>
+            </div>
+            <div>
+                <a href="https://www.facebook.com/profile.php?id=61573672362675" target="blank">
+                    <p><img width="50" height="50" src="https://img.icons8.com/ios-filled/50/facebook-new.png"
+                            alt="facebook-new" />ProActive Sports</p>
+                </a>
+            </div>
+            <div>
+                <a href="https://www.instagram.com/sports.proactive?igsh=OGNlaGUzNWVqZ2Uw" target="_blank">
+                    <p><img width="50" height="50" src="https://img.icons8.com/ios/50/instagram-new--v1.png"
+                            alt="instagram-new--v1" />ProActive Sports</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Sign In</h2>
+            <input type="text" id="loginUsername" placeholder="Username">
+            <input type="password" id="loginPassword" placeholder="Password">
+            <button onclick="login()">Login</button>
+            <p id="login-message"></p>
+            <p>Don't have an account? <a href="#" onclick="showSignupModal()">Sign up</a></p>
+        </div>
+    </div>
+
+    
+    <div id="signup-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSignupModal()">&times;</span>
+            <h2>Sign Up</h2>
+            <input type="text" id="signupUsername" placeholder="Username">
+            <input type="password" id="signupPassword" placeholder="Password">
+            <button onclick="signup()">Sign Up</button>
+            <p id="signup-message"></p>
+            <p>Already have an account? <a href="#" onclick="showLoginModal()">Login</a></p>
+        </div>
+    </div>
+    <script src="ProActive-Sports.js"></script>
+
+</body>
+<script>
+ function showLoginModal() {
+        document.getElementById('login-modal').style.display = 'block';
+    }
+
+    function closeLoginModal() {
+        document.getElementById('login-modal').style.display = 'none';
+    }
+
+    function showSignupModal() {
+        document.getElementById('signup-modal').style.display = 'block';
+    }
+
+    function closeSignupModal() {
+        document.getElementById('signup-modal').style.display = 'none';
+    }
+
+    
+    window.onclick = function(event) { 
+        const loginModal = document.getElementById('login-modal');
+        const signupModal = document.getElementById('signup-modal');
+        if (event.target == loginModal) {
+            loginModal.style.display = 'none';
+        }
+        if (event.target == signupModal) {
+            signupModal.style.display = 'none';
+        }
+    }
+
+    
+    function handleLogin(event) {
+        event.preventDefault();
+        const email = document.getElementById('login-email').value;
+        const password = document.getElementById('login-password').value;
+    }
+    </script>
+<footer>
+    <p style="text-align:center;font-size:14px;">&copy; 2026 ProActive Sports. All rights reserved.</p>
+
+    </html>
